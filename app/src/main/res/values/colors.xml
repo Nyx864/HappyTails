@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="pale_brown">#9C7049</color>
+    <color name="blue">#4425F4</color>
+    <color name="orange">#F48625</color>
+    <color name="cream">#FCFAF7</color>
+    <color name="pale_beige">#F5EDE8</color>
+
+    <!--Кнопки навигации-->
+    <color name="nav_unselected">@color/pale_brown</color>
+    <color name="nav_selected">@color/black</color>
+    <color name="nav_stroke">@color/pale_beige</color>
+
+    <!--Основные цвета-->
+    <color name="main_bg_color">@color/cream</color>
+    <color name="main_text_color">@color/black</color>
+
+    <!--Другие цвета-->
+    <color name="additional_text_color">@color/pale_brown</color>
+    <color name="button_bg_color">@color/orange</color>
+</resources>
