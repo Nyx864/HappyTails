@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">HappyTails</string>
+    <string name="app_name" translatable="false">HappyTails</string>
     <string name="home">Home</string>
     <string name="tips">Tips</string>
     <string name="pets">Pets</string>

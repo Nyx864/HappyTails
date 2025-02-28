@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        init();
 
         binding.homeGroup.setOnClickListener(v -> {
            setNavUnselected();
@@ -76,6 +77,8 @@ public class MainActivity extends AppCompatActivity {
         binding.otherText.setTextColor(getColor(R.color.nav_unselected));
         binding.petsText.setTextColor(getColor(R.color.nav_unselected));
         binding.homeText.setTextColor(getColor(R.color.nav_selected));
+
+        setFragment(new HomeFragment());
     }
 
     private void setFragment(Fragment fragment) {

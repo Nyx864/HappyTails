@@ -5,23 +5,32 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/main_bg_color"
     tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/nav"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:background="@drawable/nav_background"
+        android:layout_height="56dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
+        <View
+            android:id="@+id/separator"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/nav_stroke"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/home_group"
             android:layout_width="65dp"
-            android:layout_height="54dp"
+            android:layout_height="42dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="6dp"
             app:layout_constraintEnd_toStartOf="@+id/tips_group"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -29,9 +38,8 @@
 
             <ImageView
                 android:id="@+id/home_image"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="6dp"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -53,8 +61,8 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/tips_group"
             android:layout_width="65dp"
-            android:layout_height="54dp"
-            android:layout_marginTop="8dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="6dp"
             app:layout_constraintEnd_toStartOf="@+id/post_group"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/home_group"
@@ -62,9 +70,8 @@
 
             <ImageView
                 android:id="@+id/tips_image"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="6dp"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -86,8 +93,8 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/post_group"
             android:layout_width="65dp"
-            android:layout_height="54dp"
-            android:layout_marginTop="8dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="6dp"
             app:layout_constraintEnd_toStartOf="@+id/pets_group"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/tips_group"
@@ -108,8 +115,8 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/pets_group"
             android:layout_width="65dp"
-            android:layout_height="54dp"
-            android:layout_marginTop="8dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="6dp"
             app:layout_constraintEnd_toStartOf="@+id/other_group"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/post_group"
@@ -117,9 +124,8 @@
 
             <ImageView
                 android:id="@+id/pets_image"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="6dp"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -141,8 +147,8 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/other_group"
             android:layout_width="65dp"
-            android:layout_height="54dp"
-            android:layout_marginTop="8dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="6dp"
             android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -151,9 +157,8 @@
 
             <ImageView
                 android:id="@+id/other_image"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="6dp"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"

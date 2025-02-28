@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">HappyTails</string>
     <string name="home">Главная</string>
     <string name="tips">Советы</string>
     <string name="pets">Питомцы</string>
