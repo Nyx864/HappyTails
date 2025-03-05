@@ -17,11 +17,9 @@ import java.util.List;
 
 public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHolder> {
 
-    List<Event> eventList;
-    Context context;
+    private List<Event> eventList;
 
-    public EventAdapter(Context context, List<Event> eventList) {
-        this.context = context;
+    public EventAdapter(List<Event> eventList) {
         this.eventList = eventList;
     }
 
@@ -51,8 +49,9 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
 
         public EventViewHolder(@NonNull View itemView) {
             super(itemView);
-            EventPreview = itemView.findViewById(R.id.EventPreview);
-            EventName = itemView.findViewById(R.id.EventName);
+
+            EventPreview    = itemView.findViewById(R.id.EventPreview);
+            EventName       = itemView.findViewById(R.id.EventName);
         }
 
         public void bind(Event event) {
