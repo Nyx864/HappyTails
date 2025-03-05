@@ -47,17 +47,14 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
     public static class PostViewHolder extends RecyclerView.ViewHolder {
 
         ConstraintLayout creatorsContainer;
-
         ImageButton likeButton;
         ImageButton commentButton;
         ImageButton shareButton;
-
         ImageView mainCreator;
         ImageView secondCreator;
         ImageView thirdCreator;
         ImageView contentImage;
         ImageView moreActions;
-
         TextView likeText;
         TextView commentText;
         TextView shareText;

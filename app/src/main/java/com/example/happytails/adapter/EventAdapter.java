@@ -50,8 +50,8 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
         public EventViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            EventPreview    = itemView.findViewById(R.id.EventPreview);
-            EventName       = itemView.findViewById(R.id.EventName);
+            EventPreview        = itemView.findViewById(R.id.EventPreview);
+            EventName           = itemView.findViewById(R.id.EventName);
         }
 
         public void bind(Event event) {

@@ -117,7 +117,7 @@
             android:layout_width="65dp"
             android:layout_height="42dp"
             android:layout_marginTop="6dp"
-            app:layout_constraintEnd_toStartOf="@+id/other_group"
+            app:layout_constraintEnd_toStartOf="@+id/profile_group"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/post_group"
             app:layout_constraintTop_toTopOf="parent">
@@ -145,7 +145,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/other_group"
+            android:id="@+id/profile_group"
             android:layout_width="65dp"
             android:layout_height="42dp"
             android:layout_marginTop="6dp"
@@ -156,7 +156,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                android:id="@+id/other_image"
+                android:id="@+id/profile_image"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -165,11 +165,11 @@
                 tools:srcCompat="@tools:sample/avatars" />
 
             <TextView
-                android:id="@+id/other_text"
+                android:id="@+id/profile_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-medium"
-                android:text="@string/other"
+                android:text="@string/Profile"
                 android:textColor="@color/additional_text_color"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"

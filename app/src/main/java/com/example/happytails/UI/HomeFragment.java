@@ -1,4 +1,4 @@
-package com.example.happytails;
+package com.example.happytails.UI;
 
 import android.graphics.drawable.Icon;
 import android.os.Bundle;
@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.happytails.R;
 import com.example.happytails.adapter.EventAdapter;
 import com.example.happytails.adapter.PostAdapter;
 import com.example.happytails.data.Comment;
@@ -19,10 +20,8 @@ import com.example.happytails.data.Like;
 import com.example.happytails.data.Post;
 import com.example.happytails.data.Share;
 import com.example.happytails.databinding.FragmentHomeBinding;
-import com.google.android.material.carousel.CarouselLayoutManager;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -82,7 +81,7 @@ public class HomeFragment extends Fragment {
                         new Share(null, null))),
 
                 new Post(null,
-                        Icon.createWithResource(getContext(), R.drawable.other_image_chosen),
+                        Icon.createWithResource(getContext(), R.drawable.profile_image_chosen),
                         "sadjasldjasldjal",
                         Arrays.asList(new Like(null, null),
                                 new Like(null, null),
@@ -106,7 +105,7 @@ public class HomeFragment extends Fragment {
                                 new Share(null, null))),
 
                 new Post(null,
-                        Icon.createWithResource(getContext(), R.drawable.other_image_chosen),
+                        Icon.createWithResource(getContext(), R.drawable.profile_image_chosen),
                         "sadjasldjasldjal",
                         Arrays.asList(new Like(null, null),
                                 new Like(null, null),
@@ -130,7 +129,7 @@ public class HomeFragment extends Fragment {
                                 new Share(null, null))),
 
                 new Post(null,
-                        Icon.createWithResource(getContext(), R.drawable.other_image_chosen),
+                        Icon.createWithResource(getContext(), R.drawable.profile_image_chosen),
                         "sadjasldjasldjal",
                         Arrays.asList(new Like(null, null),
                                 new Like(null, null),
@@ -154,7 +153,7 @@ public class HomeFragment extends Fragment {
                                 new Share(null, null))),
 
                 new Post(null,
-                        Icon.createWithResource(getContext(), R.drawable.other_image_chosen),
+                        Icon.createWithResource(getContext(), R.drawable.profile_image_chosen),
                         "sadjasldjasldjal",
                         Arrays.asList(new Like(null, null),
                                 new Like(null, null),
@@ -178,7 +177,7 @@ public class HomeFragment extends Fragment {
                                 new Share(null, null))),
 
                 new Post(null,
-                        Icon.createWithResource(getContext(), R.drawable.other_image_chosen),
+                        Icon.createWithResource(getContext(), R.drawable.profile_image_chosen),
                         "sadjasldjasldjal",
                         Arrays.asList(new Like(null, null),
                                 new Like(null, null),
@@ -202,7 +201,7 @@ public class HomeFragment extends Fragment {
                                 new Share(null, null))),
 
                 new Post(null,
-                        Icon.createWithResource(getContext(), R.drawable.other_image_chosen),
+                        Icon.createWithResource(getContext(), R.drawable.profile_image_chosen),
                         "sadjasldjasldjal",
                         Arrays.asList(new Like(null, null),
                                 new Like(null, null),
@@ -226,7 +225,7 @@ public class HomeFragment extends Fragment {
                                 new Share(null, null))),
 
                 new Post(null,
-                        Icon.createWithResource(getContext(), R.drawable.other_image_chosen),
+                        Icon.createWithResource(getContext(), R.drawable.profile_image_chosen),
                         "sadjasldjasldjal",
                         Arrays.asList(new Like(null, null),
                                 new Like(null, null),
@@ -250,7 +249,7 @@ public class HomeFragment extends Fragment {
                                 new Share(null, null))),
 
                 new Post(null,
-                        Icon.createWithResource(getContext(), R.drawable.other_image_chosen),
+                        Icon.createWithResource(getContext(), R.drawable.profile_image_chosen),
                         "sadjasldjasldjal",
                         Arrays.asList(new Like(null, null),
                                 new Like(null, null),
@@ -274,7 +273,7 @@ public class HomeFragment extends Fragment {
                                 new Share(null, null))),
 
                 new Post(null,
-                        Icon.createWithResource(getContext(), R.drawable.other_image_chosen),
+                        Icon.createWithResource(getContext(), R.drawable.profile_image_chosen),
                         "sadjasldjasldjal",
                         Arrays.asList(new Like(null, null),
                                 new Like(null, null),
@@ -298,7 +297,7 @@ public class HomeFragment extends Fragment {
                                 new Share(null, null))),
 
                 new Post(null,
-                        Icon.createWithResource(getContext(), R.drawable.other_image_chosen),
+                        Icon.createWithResource(getContext(), R.drawable.profile_image_chosen),
                         "sadjasldjasldjal",
                         Arrays.asList(new Like(null, null),
                                 new Like(null, null),
