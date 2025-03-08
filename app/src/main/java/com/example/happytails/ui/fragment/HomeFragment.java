@@ -1,4 +1,4 @@
-package com.example.happytails.UI;
+package com.example.happytails.ui.fragment;
 
 import android.graphics.drawable.Icon;
 import android.os.Bundle;
@@ -43,13 +43,13 @@ public class HomeFragment extends Fragment {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
 
         List<Event> list = Arrays.asList(
-                new Event(null, "asdasd", "21312312312adasd", LocalDateTime.now()),
-                new Event(null, "asdasd", "21312312312adasd", LocalDateTime.now()),
-                new Event(null, "asdasd", "21312312312adasd", LocalDateTime.now()),
-                new Event(null, "asdasd", "21312312312adasd", LocalDateTime.now()),
-                new Event(null, "asdasd", "21312312312adasd", LocalDateTime.now()),
-                new Event(null, "asdasd", "21312312312adasd", LocalDateTime.now()),
-                new Event(null, "asdasd", "21312312312adasd", LocalDateTime.now()));
+                new Event(Icon.createWithResource(getContext(),R.drawable.ic_launcher_background), "asdasd", "21312312312adasd", LocalDateTime.now()),
+                new Event(Icon.createWithResource(getContext(),R.drawable.ic_launcher_background), "asdasd", "21312312312adasd", LocalDateTime.now()),
+                new Event(Icon.createWithResource(getContext(),R.drawable.ic_launcher_background), "asdasd", "21312312312adasd", LocalDateTime.now()),
+                new Event(Icon.createWithResource(getContext(),R.drawable.ic_launcher_background), "asdasd", "21312312312adasd", LocalDateTime.now()),
+                new Event(Icon.createWithResource(getContext(),R.drawable.ic_launcher_background), "asdasd", "21312312312adasd", LocalDateTime.now()),
+                new Event(Icon.createWithResource(getContext(),R.drawable.ic_launcher_background), "asdasd", "21312312312adasd", LocalDateTime.now()),
+                new Event(Icon.createWithResource(getContext(),R.drawable.ic_launcher_background), "asdasd", "21312312312adasd", LocalDateTime.now()));
         binding.eventsRV.setAdapter(new EventAdapter(list));
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);

@@ -1,4 +1,4 @@
-package com.example.happytails.UI;
+package com.example.happytails.ui.fragment;
 
 import android.graphics.drawable.Icon;
 import android.os.Bundle;
