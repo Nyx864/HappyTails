@@ -12,13 +12,13 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.happytails.R;
-import com.example.happytails.data.Post;
+import com.example.happytails.data.model.Post;
 
 import java.util.List;
 
 public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder> {
 
-    private List<Post> posts;
+    private final List<Post> posts;
 
     public PostAdapter(List<Post> posts) {
         this.posts = posts;

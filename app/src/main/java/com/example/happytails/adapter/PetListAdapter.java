@@ -8,12 +8,10 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.happytails.R;
-import com.example.happytails.data.Pet;
+import com.example.happytails.data.model.Pet;
 
 import java.util.List;
 
@@ -22,9 +20,8 @@ import lombok.Setter;
 
 public class PetListAdapter extends RecyclerView.Adapter<PetListAdapter.PetPreviewVewHolder> {
 
-    List<Pet> pets;
-    @Setter
-    View.OnClickListener onItemClickListener;
+    private final List<Pet> pets;
+    @Setter private View.OnClickListener onItemClickListener;
 
     public PetListAdapter(List<Pet> pets) {
         this.pets = pets;

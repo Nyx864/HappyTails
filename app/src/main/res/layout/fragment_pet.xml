@@ -5,14 +5,13 @@
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UI.PetFragment" >
+    android:background="@color/main_bg_color"
+    tools:context=".ui.fragment.PetFragment" >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:paddingHorizontal="8dp"
-        android:paddingTop="16dp"
         android:paddingBottom="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,6 +21,7 @@
             android:id="@+id/petBarName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
             android:fontFamily="@font/plus_jakarta_sans_bold"
             android:text="TextView"
             android:textColor="@color/main_text_color"
@@ -29,7 +29,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/edit"
             app:layout_constraintStart_toEndOf="@+id/back"
-            app:layout_constraintTop_toTopOf="@+id/back" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
         <ImageButton
             android:id="@+id/back"
@@ -38,8 +39,9 @@
             android:background="@android:color/transparent"
             android:rotation="180"
             android:src="@drawable/arrow"
+            app:layout_constraintBottom_toBottomOf="@+id/petBarName"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="@+id/petBarName" />
 
         <ImageButton
             android:id="@+id/edit"
@@ -47,8 +49,9 @@
             android:layout_height="48dp"
             android:background="@android:color/transparent"
             android:src="@drawable/edit"
+            app:layout_constraintBottom_toBottomOf="@+id/petBarName"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/back" />
+            app:layout_constraintTop_toTopOf="@+id/petBarName" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.core.widget.NestedScrollView

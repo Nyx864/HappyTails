@@ -5,9 +5,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,8 +13,11 @@ import android.view.ViewGroup;
 
 import com.example.happytails.R;
 import com.example.happytails.adapter.PetListAdapter;
-import com.example.happytails.data.Pet;
+import com.example.happytails.data.model.Pet;
 import com.example.happytails.databinding.FragmentPetsBinding;
+import com.google.android.flexbox.FlexWrap;
+import com.google.android.flexbox.FlexboxLayoutManager;
+import com.google.android.flexbox.JustifyContent;
 
 import java.util.Arrays;
 import java.util.List;
@@ -47,14 +48,12 @@ public class PetsFragment extends Fragment {
                 new Pet("Regulus Corneas", Icon.createWithResource(getContext(), R.drawable.settings), null, null ,null)
                 );
         PetListAdapter adapter = new PetListAdapter(pets);
-        adapter.setOnItemClickListener(v -> {
-            FragmentManager fragmentManager = getParentFragmentManager();
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.mainFrameLayout, new PetFragment());
-            fragmentTransaction.commit();
-        });
+        adapter.setOnItemClickListener(v -> Navigation.findNavController(binding.getRoot()).navigate(R.id.action_petsFragment_to_petFragment));
         binding.petsRecyclerView.setAdapter(adapter);
-        binding.petsRecyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
+        FlexboxLayoutManager layoutManager = new FlexboxLayoutManager(getContext());
+        layoutManager.setFlexWrap(FlexWrap.WRAP);
+        layoutManager.setJustifyContent(JustifyContent.SPACE_AROUND);
+        binding.petsRecyclerView.setLayoutManager(layoutManager);
 
         return binding.getRoot();
     }

@@ -1,4 +1,4 @@
-package com.example.happytails.data;
+package com.example.happytails.data.model;
 
 import android.graphics.drawable.Icon;
 

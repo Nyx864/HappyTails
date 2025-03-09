@@ -1,0 +1,9 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="383dp"
+    android:height="48dp"
+    android:viewportWidth="383"
+    android:viewportHeight="60">
+  <path
+      android:pathData="M13.77,0L369.23,0A13.77,13.77 0,0 1,383 13.77L383,45.91A13.77,13.77 0,0 1,369.23 59.68L13.77,59.68A13.77,13.77 0,0 1,0 45.91L0,13.77A13.77,13.77 0,0 1,13.77 0z"
+      android:fillColor="@color/search_field_bg_color"/>
+</vector>

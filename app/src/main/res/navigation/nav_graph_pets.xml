@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_pets"
+    app:startDestination="@id/petsFragment">
+
+    <fragment
+        android:id="@+id/petsFragment"
+        android:name="com.example.happytails.ui.fragment.PetsFragment"
+        android:label="fragment_pets"
+        tools:layout="@layout/fragment_pets">
+        <action
+            android:id="@+id/action_petsFragment_to_petFragment"
+            app:destination="@id/petFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/petFragment"
+        android:name="com.example.happytails.ui.fragment.PetFragment"
+        android:label="fragment_pet"
+        tools:layout="@layout/fragment_pet">
+        <argument
+            android:name="petId"
+            android:defaultValue="-1"
+            app:argType="integer" />
+    </fragment>
+</navigation>

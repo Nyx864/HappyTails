@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_graph_home"
+        android:icon="@drawable/home_image_chosen"
+        android:title="@string/home" />
+
+    <item
+        android:id="@+id/nav_graph_tips"
+        android:icon="@drawable/tips_image_chosen"
+        android:title="@string/tips" />
+
+    <item
+        android:id="@+id/nav_graph_post"
+        android:icon="@drawable/add_circle"
+        tools:ignore="MenuTitle" />
+
+    <item
+        android:id="@+id/nav_graph_pets"
+        android:icon="@drawable/pets_image_chosen"
+        android:title="@string/pets" />
+
+    <item
+        android:id="@+id/nav_graph_profile"
+        android:icon="@drawable/profile_image_chosen"
+        android:title="@string/Profile" />
+</menu>

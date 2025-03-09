@@ -12,16 +12,15 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.happytails.R;
-import com.example.happytails.adapter.EventAdapter;
+import com.example.happytails.adapter.ArticleAdapter;
 import com.example.happytails.adapter.PostAdapter;
-import com.example.happytails.data.Comment;
-import com.example.happytails.data.Event;
-import com.example.happytails.data.Like;
-import com.example.happytails.data.Post;
-import com.example.happytails.data.Share;
+import com.example.happytails.data.model.Article;
+import com.example.happytails.data.model.Comment;
+import com.example.happytails.data.model.Like;
+import com.example.happytails.data.model.Post;
+import com.example.happytails.data.model.Share;
 import com.example.happytails.databinding.FragmentHomeBinding;
 
-import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
 
@@ -42,15 +41,15 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
 
-        List<Event> list = Arrays.asList(
-                new Event(Icon.createWithResource(getContext(),R.drawable.ic_launcher_background), "asdasd", "21312312312adasd", LocalDateTime.now()),
-                new Event(Icon.createWithResource(getContext(),R.drawable.ic_launcher_background), "asdasd", "21312312312adasd", LocalDateTime.now()),
-                new Event(Icon.createWithResource(getContext(),R.drawable.ic_launcher_background), "asdasd", "21312312312adasd", LocalDateTime.now()),
-                new Event(Icon.createWithResource(getContext(),R.drawable.ic_launcher_background), "asdasd", "21312312312adasd", LocalDateTime.now()),
-                new Event(Icon.createWithResource(getContext(),R.drawable.ic_launcher_background), "asdasd", "21312312312adasd", LocalDateTime.now()),
-                new Event(Icon.createWithResource(getContext(),R.drawable.ic_launcher_background), "asdasd", "21312312312adasd", LocalDateTime.now()),
-                new Event(Icon.createWithResource(getContext(),R.drawable.ic_launcher_background), "asdasd", "21312312312adasd", LocalDateTime.now()));
-        binding.eventsRV.setAdapter(new EventAdapter(list));
+        List<Article> list = Arrays.asList(
+                new Article(Icon.createWithResource(getContext(),R.drawable.ic_launcher_background), "asdasd", "21312312312adasd", null),
+                new Article(Icon.createWithResource(getContext(),R.drawable.ic_launcher_background), "asdasd", "21312312312adasd", null),
+                new Article(Icon.createWithResource(getContext(),R.drawable.ic_launcher_background), "asdasd", "21312312312adasd", null),
+                new Article(Icon.createWithResource(getContext(),R.drawable.ic_launcher_background), "asdasd", "21312312312adasd", null),
+                new Article(Icon.createWithResource(getContext(),R.drawable.ic_launcher_background), "asdasd", "21312312312adasd", null),
+                new Article(Icon.createWithResource(getContext(),R.drawable.ic_launcher_background), "asdasd", "21312312312adasd", null),
+                new Article(Icon.createWithResource(getContext(),R.drawable.ic_launcher_background), "asdasd", "21312312312adasd", null));
+        binding.eventsRV.setAdapter(new ArticleAdapter(list));
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         binding.eventsRV.setLayoutManager(layoutManager);

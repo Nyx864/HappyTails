@@ -4,4 +4,8 @@
     <string name="tips">Советы</string>
     <string name="pets">Питомцы</string>
     <string name="Profile">Профиль</string>
+    <string name="care_tips">Советы по уходу</string>
+    <string name="your_pets">Ваши питомцы</string>
+    <string name="search">Поиск</string>
+    <string name="read_article">Прочитать</string>
 </resources>

@@ -20,4 +20,5 @@
     <!--Другие цвета-->
     <color name="additional_text_color">@color/pale_brown</color>
     <color name="button_bg_color">@color/orange</color>
+    <color name="search_field_bg_color">#F4EDE7</color>
 </resources>

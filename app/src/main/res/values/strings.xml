@@ -4,6 +4,8 @@
     <string name="tips">Tips</string>
     <string name="pets">Pets</string>
     <string name="Profile">Profile</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="care_tips">Care tips</string>
+    <string name="your_pets">Your pets</string>
+    <string name="search">Search</string>
+    <string name="read_article">Read Article</string>
 </resources>

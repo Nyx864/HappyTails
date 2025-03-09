@@ -2,32 +2,31 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/petPreview"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:padding="8dp">
+    android:padding="16dp">
 
     <androidx.constraintlayout.utils.widget.ImageFilterView
-        android:id="@+id/petPreviewImage"
-        android:layout_width="141dp"
-        android:layout_height="141dp"
-        app:roundPercent="1"
+        android:id="@+id/ArticlePreview"
+        app:round="12dp"
+        android:layout_width="135dp"
+        android:layout_height="135dp"
+        android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/petPreviewText"
+        android:id="@+id/ArticleName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="14dp"
         android:fontFamily="@font/plus_jakarta_sans_medium"
-        android:paddingHorizontal="8dp"
-        tools:text="TextView"
+        android:textAlignment="center"
         android:textColor="@color/main_text_color"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/petPreviewImage" />
+        app:layout_constraintEnd_toEndOf="@+id/ArticlePreview"
+        app:layout_constraintStart_toStartOf="@+id/ArticlePreview"
+        app:layout_constraintTop_toBottomOf="@+id/ArticlePreview" />
 </androidx.constraintlayout.widget.ConstraintLayout>
