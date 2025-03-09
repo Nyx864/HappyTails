@@ -13,7 +13,7 @@
 
     <item
         android:id="@+id/nav_graph_post"
-        android:icon="@drawable/add_circle"
+        android:icon="@drawable/add_image"
         tools:ignore="MenuTitle" />
 
     <item
@@ -24,5 +24,5 @@
     <item
         android:id="@+id/nav_graph_profile"
         android:icon="@drawable/profile_image_chosen"
-        android:title="@string/Profile" />
+        android:title="@string/profile" />
 </menu>

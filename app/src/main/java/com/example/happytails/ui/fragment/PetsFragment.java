@@ -48,7 +48,9 @@ public class PetsFragment extends Fragment {
                 new Pet("Regulus Corneas", Icon.createWithResource(getContext(), R.drawable.settings), null, null ,null)
                 );
         PetListAdapter adapter = new PetListAdapter(pets);
-        adapter.setOnItemClickListener(v -> Navigation.findNavController(binding.getRoot()).navigate(R.id.action_petsFragment_to_petFragment));
+        adapter.setOnItemClickListener(v ->
+                Navigation.findNavController(binding.getRoot())
+                        .navigate(R.id.action_petsFragment_to_petFragment));
         binding.petsRecyclerView.setAdapter(adapter);
         FlexboxLayoutManager layoutManager = new FlexboxLayoutManager(getContext());
         layoutManager.setFlexWrap(FlexWrap.WRAP);

@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.example.happytails.R;
 import com.example.happytails.adapter.TabAdapter;
@@ -35,6 +36,7 @@ public class TipsFragment extends Fragment {
             "tab",
             "LayoutInflater"
     );
+    private String groupFilter;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -53,6 +55,10 @@ public class TipsFragment extends Fragment {
 
     private void initTabs() {
         TabAdapter tabAdapter = new TabAdapter(tabs);
+        tabAdapter.setOnStateUpdateListener((v, chosen) -> {
+            if (chosen) groupFilter = ((Button) v).getText().toString();
+            else groupFilter = null;
+        });
         binding.tabsRV.setAdapter(tabAdapter);
         LinearLayoutManager layoutManager = new LinearLayoutManager(
                 getContext(),

@@ -3,9 +3,13 @@
     <string name="home">Home</string>
     <string name="tips">Tips</string>
     <string name="pets">Pets</string>
-    <string name="Profile">Profile</string>
+    <string name="profile">Profile</string>
     <string name="care_tips">Care tips</string>
     <string name="your_pets">Your pets</string>
     <string name="search">Search</string>
     <string name="read_article">Read Article</string>
+    <string name="vet_visits">Vet Visits</string>
+    <string name="add_friend">Add Friend</string>
+    <string name="friends">Friends</string>
+    <string name="see_more">See more</string>
 </resources>

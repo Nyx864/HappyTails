@@ -23,5 +23,8 @@
             android:name="petId"
             android:defaultValue="-1"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_petFragment_to_petsFragment"
+            app:destination="@id/petsFragment" />
     </fragment>
 </navigation>

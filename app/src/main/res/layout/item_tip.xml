@@ -25,8 +25,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:fontFamily="@font/plus_jakarta_sans_bold"
+        android:fontFamily="@font/inter_bold"
         android:textColor="@color/main_text_color"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tipImage"
         tools:text="TextView" />
@@ -37,23 +38,27 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="12dp"
-        android:fontFamily="@font/plus_jakarta_sans"
+        android:fontFamily="@font/inter"
         android:textColor="@color/main_text_color"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tipText"
         tools:text="TextView" />
 
     <Button
         android:id="@+id/tipReadBtn"
-        android:layout_width="111dp"
+        android:layout_width="wrap_content"
         android:layout_height="32dp"
         android:layout_marginEnd="16dp"
-        android:background="@drawable/button_background"
-        android:fontFamily="@font/plus_jakarta_sans_medium"
+        android:background="@drawable/rounded"
+        android:backgroundTint="@color/button_bg_color"
+        android:fontFamily="@font/inter"
+        android:paddingHorizontal="10dp"
         android:text="@string/read_article"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="@color/main_text_color"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="@+id/tipGroup"
         app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

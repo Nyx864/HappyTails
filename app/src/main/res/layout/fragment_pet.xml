@@ -21,11 +21,10 @@
             android:id="@+id/petBarName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:fontFamily="@font/plus_jakarta_sans_bold"
-            android:text="TextView"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/inter_bold"
             android:textColor="@color/main_text_color"
-            android:textSize="18sp"
+            android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/edit"
             app:layout_constraintStart_toEndOf="@+id/back"
@@ -80,22 +79,20 @@
                 android:id="@+id/petName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
-                android:fontFamily="@font/plus_jakarta_sans_bold"
-                android:text="TextView"
+                android:fontFamily="@font/inter_bold"
                 android:textColor="@color/main_text_color"
-                android:textSize="22sp" />
+                android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/petDescription"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:fontFamily="@font/plus_jakarta_sans"
-                android:text="TextView"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/inter"
                 android:textColor="@color/additional_text_color"
-                android:textSize="16sp" />
+                android:textSize="18sp" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/vetVisit"
@@ -107,39 +104,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:fontFamily="@font/plus_jakarta_sans"
-                    android:text="TextView"
+                    android:fontFamily="@font/inter_medium"
+                    android:text="@string/vet_visits"
                     android:textColor="@color/main_text_color"
+                    android:textSize="18sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="21dp"
-                    android:src="@drawable/arrow"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/vaccinations"
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:layout_marginTop="8dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:fontFamily="@font/plus_jakarta_sans"
-                    android:text="TextView"
-                    android:textColor="@color/main_text_color"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.45" />
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -159,13 +131,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:fontFamily="@font/plus_jakarta_sans_bold"
-                    android:text="Friends"
+                    android:fontFamily="@font/inter_bold"
+                    android:text="@string/friends"
                     android:textColor="@color/main_text_color"
-                    android:textSize="22sp"
+                    android:textSize="24sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.25" />
 
                 <Button
                     android:id="@+id/seeMoreFriendsBtn"
@@ -173,11 +146,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="16dp"
                     android:background="@android:color/transparent"
-                    android:fontFamily="@font/plus_jakarta_sans_bold"
-                    android:text="See more"
+                    android:fontFamily="@font/inter_bold"
+                    android:text="@string/see_more"
                     android:textAllCaps="false"
                     android:textColor="@color/blue"
-                    android:textSize="16sp"
+                    android:textSize="18sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>

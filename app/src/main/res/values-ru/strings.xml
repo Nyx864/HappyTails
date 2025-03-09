@@ -3,9 +3,13 @@
     <string name="home">Главная</string>
     <string name="tips">Советы</string>
     <string name="pets">Питомцы</string>
-    <string name="Profile">Профиль</string>
+    <string name="profile">Профиль</string>
     <string name="care_tips">Советы по уходу</string>
     <string name="your_pets">Ваши питомцы</string>
     <string name="search">Поиск</string>
     <string name="read_article">Прочитать</string>
+    <string name="vet_visits">Записаться к ветеренару</string>
+    <string name="add_friend">Добавить в друзья</string>
+    <string name="friends">Друзья</string>
+    <string name="see_more">посмотреть всех</string>
 </resources>
