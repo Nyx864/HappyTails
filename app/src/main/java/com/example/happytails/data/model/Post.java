@@ -10,7 +10,7 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class Post {
-    private List<User> collaborators;
+    private List<User> creators;
     private Icon contentIcon;
     private String description;
     private List<Like> likes;

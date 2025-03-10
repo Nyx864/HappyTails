@@ -32,31 +32,43 @@ public class PetsFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentPetsBinding.inflate(inflater, container, false);
 
+        setupPetsList();
 
-        List<Pet> pets = Arrays.asList(
-                new Pet("Bob", Icon.createWithResource(getContext(), R.drawable.settings), null, null ,null),
-                new Pet("Anna", Icon.createWithResource(getContext(), R.drawable.settings), null, null ,null),
-                new Pet("Yarik", Icon.createWithResource(getContext(), R.drawable.settings), null, null ,null),
-                new Pet("Angelica", Icon.createWithResource(getContext(), R.drawable.settings), null, null ,null),
-                new Pet("Huston", Icon.createWithResource(getContext(), R.drawable.settings), null, null ,null),
-                new Pet("Ai", Icon.createWithResource(getContext(), R.drawable.settings), null, null ,null),
-                new Pet("Koneko", Icon.createWithResource(getContext(), R.drawable.settings), null, null ,null),
-                new Pet("Regulus Corneas", Icon.createWithResource(getContext(), R.drawable.settings), null, null ,null)
-                );
+        return binding.getRoot();
+    }
+
+    private void setupPetsList() {
+        List<Pet> pets = getPets();
+
         PetListAdapter adapter = new PetListAdapter(pets);
-        adapter.setOnItemClickListener(v ->
-                Navigation.findNavController(binding.getRoot())
-                        .navigate(R.id.action_petsFragment_to_petFragment));
+        adapter.setOnItemClickListener((view, data) -> navigateToPetFragment());
         binding.petsRecyclerView.setAdapter(adapter);
+
         FlexboxLayoutManager layoutManager = new FlexboxLayoutManager(getContext());
         layoutManager.setFlexWrap(FlexWrap.WRAP);
         layoutManager.setJustifyContent(JustifyContent.SPACE_AROUND);
         binding.petsRecyclerView.setLayoutManager(layoutManager);
+    }
 
-        return binding.getRoot();
+    private List<Pet> getPets() {
+        Icon defaultIcon = Icon.createWithResource(getContext(), R.drawable.settings);
+        return Arrays.asList(
+                new Pet("Bob", defaultIcon, null, null, null),
+                new Pet("Anna", defaultIcon, null, null, null),
+                new Pet("Yarik", defaultIcon, null, null, null),
+                new Pet("Angelica", defaultIcon, null, null, null),
+                new Pet("Huston", defaultIcon, null, null, null),
+                new Pet("Ai", defaultIcon, null, null, null),
+                new Pet("Koneko", defaultIcon, null, null, null),
+                new Pet("Regulus Corneas", defaultIcon, null, null, null)
+        );
+    }
+
+    private void navigateToPetFragment() {
+        Navigation.findNavController(binding.getRoot())
+                .navigate(R.id.action_petsFragment_to_petFragment);
     }
 }

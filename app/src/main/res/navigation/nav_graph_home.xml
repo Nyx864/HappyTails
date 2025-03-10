@@ -9,5 +9,19 @@
         android:id="@+id/homeFragment"
         android:name="com.example.happytails.ui.fragment.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_petFragment2"
+            app:destination="@id/petFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/petFragment2"
+        android:name="com.example.happytails.ui.fragment.PetFragment"
+        android:label="fragment_pet"
+        tools:layout="@layout/fragment_pet" >
+        <argument
+            android:name="petId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+    </fragment>
 </navigation>

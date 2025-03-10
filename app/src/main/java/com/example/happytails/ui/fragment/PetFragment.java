@@ -36,18 +36,35 @@ public class PetFragment extends Fragment {
                 "sadasdasdasd\n" +
                 "sadasdsad\n", new ArrayList<>(), new ArrayList<>());
 
+        setupPetDetails(pet);
+        setupFriendsList(pet);
+        setupPostsList(pet);
+
+        binding.back.setOnClickListener(v -> navigateBack());
+
+        return binding.getRoot();
+    }
+
+    private void setupPetDetails(Pet pet) {
         binding.petDescription.setText(pet.getDescription());
         binding.petBarName.setText(pet.getName());
         binding.petName.setText(pet.getName());
         binding.petImage.setImageIcon(pet.getPfp());
+    }
+
+    private void setupFriendsList(Pet pet) {
         binding.petFriendsList.setAdapter(new PetListAdapter(pet.getFriends()));
-        binding.petFriendsList.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
+        binding.petFriendsList.setLayoutManager(
+                new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false)
+        );
+    }
+
+    private void setupPostsList(Pet pet) {
         binding.petPosts.setAdapter(new PostAdapter(pet.getPosts()));
         binding.petPosts.setLayoutManager(new LinearLayoutManager(getContext()));
-        binding.back.setOnClickListener(v ->
-                Navigation.findNavController(binding.getRoot())
-                        .popBackStack());
+    }
 
-        return binding.getRoot();
+    private void navigateBack() {
+        Navigation.findNavController(binding.getRoot()).popBackStack();
     }
 }

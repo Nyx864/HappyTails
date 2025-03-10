@@ -11,6 +11,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.happytails.R;
+import com.example.happytails.listener.OnItemClickListener;
 import com.example.happytails.data.model.Pet;
 
 import java.util.List;
@@ -21,7 +22,7 @@ import lombok.Setter;
 public class PetListAdapter extends RecyclerView.Adapter<PetListAdapter.PetPreviewVewHolder> {
 
     private final List<Pet> pets;
-    @Setter private View.OnClickListener onItemClickListener;
+    @Setter private OnItemClickListener onItemClickListener;
 
     public PetListAdapter(List<Pet> pets) {
         this.pets = pets;
@@ -40,7 +41,10 @@ public class PetListAdapter extends RecyclerView.Adapter<PetListAdapter.PetPrevi
         Pet pet = pets.get(position);
 
         holder.bind(pet);
-        holder.container.setOnClickListener(onItemClickListener);
+        holder.container.setOnClickListener(v -> {
+            if (onItemClickListener != null)
+                onItemClickListener.onItemClick(v, pet);
+        });
     }
 
     @Override

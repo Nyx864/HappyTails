@@ -20,7 +20,7 @@ import java.util.ArrayList;
 
 public class ProfileFragment extends Fragment {
 
-    FragmentProfileBinding binding;
+    private FragmentProfileBinding binding;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -28,20 +28,28 @@ public class ProfileFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentProfileBinding.inflate(inflater, container, false);
 
-        User user = new User("Anna", null, "i love my dogs!!!", null, null ,null);
+        setupUserProfile();
+        setupPetsList();
+
+        return binding.getRoot();
+    }
+
+    private void setupUserProfile() {
+        User user = new User("Anna", null, "i love my dogs!!!", null, null, null);
         binding.userName.setText(user.getName());
         binding.userDescription.setText(user.getDescription());
         binding.userPFP.setImageIcon(user.getPfp());
+    }
+
+    private void setupPetsList() {
         binding.userPetsRv.setAdapter(new PetListAdapter(new ArrayList<>()));
+
         FlexboxLayoutManager layoutManager = new FlexboxLayoutManager(getContext());
         layoutManager.setFlexWrap(FlexWrap.WRAP);
         layoutManager.setJustifyContent(JustifyContent.SPACE_AROUND);
         binding.userPetsRv.setLayoutManager(layoutManager);
-
-        return binding.getRoot();
     }
 }

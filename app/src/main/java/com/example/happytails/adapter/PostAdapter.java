@@ -1,5 +1,10 @@
 package com.example.happytails.adapter;
 
+import android.graphics.Typeface;
+import android.text.InputFilter;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.StyleSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,13 +17,20 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.happytails.R;
+import com.example.happytails.data.model.User;
+import com.example.happytails.listener.OnItemClickListener;
 import com.example.happytails.data.model.Post;
 
+import java.util.Iterator;
 import java.util.List;
+
+import lombok.Setter;
 
 public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder> {
 
     private final List<Post> posts;
+    @Setter
+    private OnItemClickListener onItemClickListener;
 
     public PostAdapter(List<Post> posts) {
         this.posts = posts;
@@ -35,8 +47,12 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
     @Override
     public void onBindViewHolder(@NonNull PostViewHolder holder, int position) {
         Post post = posts.get(position);
-
         holder.bind(post);
+
+        holder.creatorsContainer.setOnClickListener(v -> {
+            if (onItemClickListener != null)
+                onItemClickListener.onItemClick(v, post);
+        });
     }
 
     @Override
@@ -45,6 +61,8 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
     }
 
     public static class PostViewHolder extends RecyclerView.ViewHolder {
+
+        private static final int MAX_CREATOR_TEXT_LENGTH = 25;
 
         ConstraintLayout creatorsContainer;
         ImageButton likeButton;
@@ -59,38 +77,83 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
         TextView commentText;
         TextView shareText;
         TextView creatorText;
-        TextView creatorDescriptionText;
         TextView descriptionText;
 
 
         public PostViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            creatorsContainer       = itemView.findViewById(R.id.creatorsContainer);
-            likeButton              = itemView.findViewById(R.id.likeButton);
-            commentButton           = itemView.findViewById(R.id.commentButton);
-            shareButton             = itemView.findViewById(R.id.shareButton);
-            mainCreator             = itemView.findViewById(R.id.mainCreator);
-            secondCreator           = itemView.findViewById(R.id.secondCreator);
-            thirdCreator            = itemView.findViewById(R.id.thirdCreator);
-            contentImage            = itemView.findViewById(R.id.contentImage);
-            moreActions             = itemView.findViewById(R.id.moreActions);
-            likeText                = itemView.findViewById(R.id.likeText);
-            commentText             = itemView.findViewById(R.id.commentText);
-            shareText               = itemView.findViewById(R.id.shareText);
-            creatorText             = itemView.findViewById(R.id.creatorText);
-            creatorDescriptionText  = itemView.findViewById(R.id.creatorDescriptionText);
-            descriptionText         = itemView.findViewById(R.id.descriptionText);
+            creatorsContainer = itemView.findViewById(R.id.creatorsContainer);
+            likeButton = itemView.findViewById(R.id.likeButton);
+            commentButton = itemView.findViewById(R.id.commentButton);
+            shareButton = itemView.findViewById(R.id.shareButton);
+            mainCreator = itemView.findViewById(R.id.mainCreator);
+            secondCreator = itemView.findViewById(R.id.secondCreator);
+            thirdCreator = itemView.findViewById(R.id.thirdCreator);
+            contentImage = itemView.findViewById(R.id.contentImage);
+            moreActions = itemView.findViewById(R.id.moreActions);
+            likeText = itemView.findViewById(R.id.likeText);
+            commentText = itemView.findViewById(R.id.commentText);
+            shareText = itemView.findViewById(R.id.shareText);
+            creatorText = itemView.findViewById(R.id.creatorText);
+            descriptionText = itemView.findViewById(R.id.descriptionText);
         }
 
         public void bind(Post post) {
+            setupCreators(post);
+            setupContent(post);
+            setupButtons(post);
+        }
+
+        private void setupCreators(Post post) {
+            int creatorsCount = post.getCreators().size();
+
+            if (creatorsCount > 0) {
+                mainCreator.setImageIcon(post.getCreators().get(0).getPfp());
+            }
+            if (creatorsCount > 1) {
+                secondCreator.setImageIcon(post.getCreators().get(1).getPfp());
+            }
+            if (creatorsCount > 2) {
+                thirdCreator.setImageIcon(post.getCreators().get(2).getPfp());
+            }
+
+            creatorText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(MAX_CREATOR_TEXT_LENGTH)});
+            String creatorNames = getCreatorsNamesAsString(post);
+            creatorText.setText(creatorNames);
+        }
+
+        private void setupContent(Post post) {
             contentImage.setImageIcon(post.getContentIcon());
 
+            String username = post.getCreators().get(0).getName();
+            String fullText = username + " " + post.getDescription();
+            SpannableString spannableString = new SpannableString(fullText);
+            spannableString.setSpan(
+                    new StyleSpan(Typeface.BOLD),
+                    0,
+                    username.length(),
+                    Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+            );
             descriptionText.setText(post.getDescription());
+        }
 
+        private void setupButtons(Post post) {
             likeText.setText(String.valueOf(post.getLikes().size()));
             commentText.setText(String.valueOf(post.getComments().size()));
             shareText.setText(String.valueOf(post.getShares().size()));
+        }
+
+        private String getCreatorsNamesAsString(Post post) {
+            StringBuilder res = new StringBuilder();
+
+            Iterator<User> user = post.getCreators().iterator();
+            while (res.length() < MAX_CREATOR_TEXT_LENGTH
+                    && user.hasNext()) {
+                res.append(" ").append(user.next().getName());
+            }
+
+            return res.toString();
         }
     }
 }

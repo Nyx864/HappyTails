@@ -34,15 +34,19 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupNavigationUI() {
         NavHostFragment navHostFragment = (NavHostFragment)
-                getSupportFragmentManager()
-                .findFragmentById(R.id.mainContainerView);
+                getSupportFragmentManager().findFragmentById(R.id.mainContainerView);
+
         if (navHostFragment == null) return;
 
         NavController controller = navHostFragment.getNavController();
         NavigationUI.setupWithNavController(binding.mainBottomNavigationView, controller);
+        customizeCenterBottomNavigationItem();
+    }
 
+    private void customizeCenterBottomNavigationItem() {
         View centerBottomNavigationItem = binding.mainBottomNavigationView
                 .findViewById(R.id.nav_graph_post);
+
         centerBottomNavigationItem.setTranslationY(25);
         centerBottomNavigationItem.setScaleX(1.5f);
         centerBottomNavigationItem.setScaleY(1.5f);

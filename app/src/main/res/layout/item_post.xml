@@ -102,10 +102,10 @@
         android:layout_marginStart="12dp"
         android:layout_marginTop="5dp"
         android:background="@android:color/transparent"
+        android:contentDescription="Like"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/contentImage"
-        android:contentDescription="Like"
-        app:srcCompat="@drawable/home_image_chosen" />
+        app:srcCompat="@drawable/heart" />
 
     <ImageButton
         android:id="@+id/commentButton"
@@ -113,11 +113,11 @@
         android:layout_height="36dp"
         android:layout_marginStart="20dp"
         android:background="@android:color/transparent"
+        android:contentDescription="Comment"
         app:layout_constraintBottom_toBottomOf="@+id/likeButton"
         app:layout_constraintStart_toEndOf="@+id/likeText"
         app:layout_constraintTop_toTopOf="@+id/likeButton"
-        android:contentDescription="Comment"
-        app:srcCompat="@drawable/home_image_chosen" />
+        app:srcCompat="@drawable/message" />
 
     <ImageButton
         android:id="@+id/shareButton"
@@ -125,11 +125,11 @@
         android:layout_height="36dp"
         android:layout_marginStart="20dp"
         android:background="@android:color/transparent"
+        android:contentDescription="Share"
         app:layout_constraintBottom_toBottomOf="@+id/commentButton"
         app:layout_constraintStart_toEndOf="@+id/commentText"
         app:layout_constraintTop_toTopOf="@+id/commentButton"
-        android:contentDescription="Share"
-        app:srcCompat="@drawable/home_image_chosen" />
+        app:srcCompat="@drawable/repost" />
 
     <TextView
         android:id="@+id/likeText"
@@ -156,28 +156,17 @@
         app:layout_constraintTop_toTopOf="@+id/shareButton" />
 
     <TextView
-        android:id="@+id/creatorDescriptionText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="11dp"
-        android:fontFamily="@font/inter_medium"
-        android:textColor="@color/main_text_color"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/likeButton" />
-
-    <TextView
         android:id="@+id/descriptionText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:ellipsize="middle"
         android:fontFamily="@font/inter"
         android:maxLines="2"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/creatorDescriptionText"
-        app:layout_constraintTop_toTopOf="@+id/creatorDescriptionText" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="610dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,13 +11,17 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.happytails.R;
+import com.example.happytails.listener.OnItemClickListener;
 import com.example.happytails.data.model.Article;
 
 import java.util.List;
 
+import lombok.Setter;
+
 public class TipAdapter extends RecyclerView.Adapter<TipAdapter.TipViewHolder> {
 
     private final List<Article> tips;
+    @Setter private OnItemClickListener onItemClickListener;
 
     public TipAdapter(List<Article> tips) {
         this.tips = tips;
@@ -36,6 +40,10 @@ public class TipAdapter extends RecyclerView.Adapter<TipAdapter.TipViewHolder> {
         Article tip = tips.get(position);
 
         holder.bind(tip);
+        holder.tipReadBtn.setOnClickListener(v -> {
+            if (onItemClickListener != null)
+                onItemClickListener.onItemClick(v, tip);
+        });
     }
 
     @Override

@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.happytails.R;
 import com.example.happytails.adapter.TabAdapter;
@@ -19,12 +20,16 @@ import com.example.happytails.data.model.Article;
 import com.example.happytails.databinding.FragmentTipsBinding;
 
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class TipsFragment extends Fragment {
 
     private FragmentTipsBinding binding;
-    private static final List<String> tabs = Arrays.asList(
+    private final Set<String> groupFilters = new HashSet<>();
+
+    private static final List<String> TABS = Arrays.asList(
             "dogs",
             "cats",
             "behavior",
@@ -36,7 +41,6 @@ public class TipsFragment extends Fragment {
             "tab",
             "LayoutInflater"
     );
-    private String groupFilter;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -44,42 +48,57 @@ public class TipsFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentTipsBinding.inflate(inflater, container, false);
-        initTabs();
-        initTips();
+
+        setupTabs();
+        setupTips();
 
         return binding.getRoot();
     }
 
-    private void initTabs() {
-        TabAdapter tabAdapter = new TabAdapter(tabs);
-        tabAdapter.setOnStateUpdateListener((v, chosen) -> {
-            if (chosen) groupFilter = ((Button) v).getText().toString();
-            else groupFilter = null;
-        });
+    private void setupTabs() {
+        TabAdapter tabAdapter = new TabAdapter(TABS);
+        tabAdapter.setOnStateUpdateListener(this::updateGroupFilter);
+
         binding.tabsRV.setAdapter(tabAdapter);
         LinearLayoutManager layoutManager = new LinearLayoutManager(
                 getContext(),
                 LinearLayoutManager.HORIZONTAL,
-                false);
+                false
+        );
         binding.tabsRV.setLayoutManager(layoutManager);
     }
 
-    private void initTips() {
-        List<Article> list = Arrays.asList(
-                new Article(Icon.createWithResource(getContext(), R.drawable.ic_launcher_background), "asdasd", "21312312312adasd", null),
-                new Article(Icon.createWithResource(getContext(),R.drawable.ic_launcher_background), "asdasd", "21312312312adasd", null),
-                new Article(Icon.createWithResource(getContext(),R.drawable.ic_launcher_background), "asdasd", "21312312312adasd", null),
-                new Article(Icon.createWithResource(getContext(),R.drawable.ic_launcher_background), "asdasd", "21312312312adasd", null),
-                new Article(Icon.createWithResource(getContext(),R.drawable.ic_launcher_background), "asdasd", "21312312312adasd", null),
-                new Article(Icon.createWithResource(getContext(),R.drawable.ic_launcher_background), "asdasd", "21312312312adasd", null),
-                new Article(Icon.createWithResource(getContext(),R.drawable.ic_launcher_background), "asdasd", "21312312312adasd", null));
+    private void updateGroupFilter(View view, boolean chosen) {
+        String filterText = ((Button) view).getText().toString();
+        if (chosen) {
+            groupFilters.add(filterText);
+        } else {
+            groupFilters.remove(filterText);
+        }
+    }
 
-        TipAdapter adapter = new TipAdapter(list);
-        binding.tipsRV.setAdapter(adapter);
+    private void setupTips() {
+        List<Article> articles = getArticles();
+
+        TipAdapter tipAdapter = new TipAdapter(articles);
+        binding.tipsRV.setAdapter(tipAdapter);
+
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         binding.tipsRV.setLayoutManager(layoutManager);
+    }
+
+    private List<Article> getArticles() {
+        Icon defaultIcon = Icon.createWithResource(getContext(), R.drawable.ic_launcher_background);
+        return Arrays.asList(
+                new Article(defaultIcon, "asdasd", "21312312312adasd", null),
+                new Article(defaultIcon, "asdasd", "21312312312adasd", null),
+                new Article(defaultIcon, "asdasd", "21312312312adasd", null),
+                new Article(defaultIcon, "asdasd", "21312312312adasd", null),
+                new Article(defaultIcon, "asdasd", "21312312312adasd", null),
+                new Article(defaultIcon, "asdasd", "21312312312adasd", null),
+                new Article(defaultIcon, "asdasd", "21312312312adasd", null)
+        );
     }
 }

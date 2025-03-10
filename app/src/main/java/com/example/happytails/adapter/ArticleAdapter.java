@@ -10,13 +10,17 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.happytails.R;
+import com.example.happytails.listener.OnItemClickListener;
 import com.example.happytails.data.model.Article;
 
 import java.util.List;
 
+import lombok.Setter;
+
 public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ArticleViewHolder> {
 
     private final List<Article> articles;
+    @Setter private OnItemClickListener onItemClickListener;
 
     public ArticleAdapter(List<Article> articles) {
         this.articles = articles;
@@ -32,8 +36,13 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ArticleV
 
     @Override
     public void onBindViewHolder(@NonNull ArticleViewHolder holder, int position) {
-        Article event = articles.get(position);
-        holder.bind(event);
+        Article article = articles.get(position);
+
+        holder.bind(article);
+        holder.ArticlePreview.setOnClickListener(v -> {
+            if (onItemClickListener != null)
+                onItemClickListener.onItemClick(v, article);
+        });
     }
 
     @Override
@@ -53,9 +62,9 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ArticleV
             ArticleName           = itemView.findViewById(R.id.ArticleName);
         }
 
-        public void bind(Article event) {
-            if (event.getImage() != null) ArticlePreview.setImageIcon(event.getImage());
-            ArticleName.setText(event.getName());
+        public void bind(Article article) {
+            if (article.getImage() != null) ArticlePreview.setImageIcon(article.getImage());
+            ArticleName.setText(article.getName());
         }
     }
 }

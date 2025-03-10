@@ -13,6 +13,7 @@ import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.happytails.R;
+import com.example.happytails.listener.OnChosenStateUpdateListener;
 
 import java.util.HashSet;
 import java.util.List;
@@ -65,11 +66,6 @@ public class TabAdapter extends RecyclerView.Adapter<TabAdapter.TabViewHolder> {
     public void notifyChosenStateUpdated(View view, boolean chosen) {
         if (onStateUpdateListener != null)
             onStateUpdateListener.onChosenStateUpdate(view, chosen);
-    }
-
-    @FunctionalInterface
-    public interface OnChosenStateUpdateListener {
-        void onChosenStateUpdate(View v, boolean chosen);
     }
 
     public static class TabViewHolder extends RecyclerView.ViewHolder {
