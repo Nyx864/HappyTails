@@ -4,11 +4,13 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.happytails.R;
 import com.example.happytails.adapter.PetListAdapter;
 import com.example.happytails.data.model.User;
 import com.example.happytails.databinding.FragmentProfileBinding;
@@ -34,6 +36,8 @@ public class ProfileFragment extends Fragment {
         setupUserProfile();
         setupPetsList();
 
+        binding.settings.setOnClickListener(v -> navigateToSettingsFragment());
+
         return binding.getRoot();
     }
 
@@ -51,5 +55,10 @@ public class ProfileFragment extends Fragment {
         layoutManager.setFlexWrap(FlexWrap.WRAP);
         layoutManager.setJustifyContent(JustifyContent.SPACE_AROUND);
         binding.userPetsRv.setLayoutManager(layoutManager);
+    }
+
+    private void navigateToSettingsFragment() {
+        Navigation.findNavController(binding.getRoot())
+                .navigate(R.id.action_profileFragment_to_settingsFragment);
     }
 }

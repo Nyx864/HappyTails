@@ -13,6 +13,12 @@
         <action
             android:id="@+id/action_homeFragment_to_petFragment2"
             app:destination="@id/petFragment2" />
+        <action
+            android:id="@+id/action_homeFragment_to_postFragment"
+            app:destination="@id/postFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_tipFragment2"
+            app:destination="@id/tipFragment2" />
     </fragment>
     <fragment
         android:id="@+id/petFragment2"
@@ -23,5 +29,27 @@
             android:name="petId"
             app:argType="integer"
             android:defaultValue="-1" />
+        <action
+            android:id="@+id/action_petFragment2_to_nav_graph_pets"
+            app:destination="@id/nav_graph_pets" />
+        <action
+            android:id="@+id/action_petFragment2_self"
+            app:destination="@id/petFragment2" />
     </fragment>
+    <fragment
+        android:id="@+id/postFragment"
+        android:name="com.example.happytails.ui.fragment.PostFragment"
+        android:label="fragment_post"
+        tools:layout="@layout/fragment_post" >
+        <action
+            android:id="@+id/action_postFragment_to_nav_graph_profile"
+            app:destination="@id/nav_graph_profile" />
+    </fragment>
+    <fragment
+        android:id="@+id/tipFragment2"
+        android:name="com.example.happytails.ui.fragment.TipFragment"
+        android:label="fragment_tip"
+        tools:layout="@layout/fragment_tip" />
+    <include app:graph="@navigation/nav_graph_profile" />
+    <include app:graph="@navigation/nav_graph_pets" />
 </navigation>

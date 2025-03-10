@@ -29,8 +29,10 @@ import lombok.Setter;
 public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder> {
 
     private final List<Post> posts;
-    @Setter
-    private OnItemClickListener onItemClickListener;
+    @Setter private OnItemClickListener onCreatorsClickListener;
+    @Setter private OnItemClickListener onLikeClickListener;
+    @Setter private OnItemClickListener onCommentClickListener;
+    @Setter private OnItemClickListener onShareClickListener;
 
     public PostAdapter(List<Post> posts) {
         this.posts = posts;
@@ -50,8 +52,23 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
         holder.bind(post);
 
         holder.creatorsContainer.setOnClickListener(v -> {
-            if (onItemClickListener != null)
-                onItemClickListener.onItemClick(v, post);
+            if (onCreatorsClickListener != null)
+                onCreatorsClickListener.onItemClick(v, post);
+        });
+
+        holder.likeButton.setOnClickListener(v -> {
+            if (onLikeClickListener != null)
+                onLikeClickListener.onItemClick(v, post);
+        });
+
+        holder.commentButton.setOnClickListener(v -> {
+            if (onCommentClickListener != null)
+                onCommentClickListener.onItemClick(v, post);
+        });
+
+        holder.shareButton.setOnClickListener(v -> {
+            if (onShareClickListener != null)
+                onShareClickListener.onItemClick(v, post);
         });
     }
 
@@ -135,7 +152,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
                     username.length(),
                     Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
             );
-            descriptionText.setText(post.getDescription());
+            descriptionText.setText(spannableString);
         }
 
         private void setupButtons(Post post) {
@@ -150,10 +167,10 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
             Iterator<User> user = post.getCreators().iterator();
             while (res.length() < MAX_CREATOR_TEXT_LENGTH
                     && user.hasNext()) {
-                res.append(" ").append(user.next().getName());
+                res.append(", ").append(user.next().getName());
             }
 
-            return res.toString();
+            return res.delete(0, 2).toString(); // delete ", " before names
         }
     }
 }

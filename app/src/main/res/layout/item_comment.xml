@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingVertical="8dp">
+
+    <ImageButton
+        android:id="@+id/commentLikeBtn"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="16dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.26"
+        app:srcCompat="@drawable/heart" />
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/commentCreatorImage"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:roundPercent="1"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/commentCreatorName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/inter_medium"
+        android:text="TextView"
+        android:textColor="@color/main_text_color"
+        android:textSize="16dp"
+        app:layout_constraintStart_toEndOf="@+id/commentCreatorImage"
+        app:layout_constraintTop_toTopOf="@+id/commentCreatorImage" />
+
+    <TextView
+        android:id="@+id/commentContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/inter"
+        android:text="TextView"
+        android:textColor="@color/main_text_color"
+        app:layout_constraintStart_toEndOf="@+id/commentCreatorImage"
+        app:layout_constraintTop_toBottomOf="@+id/commentCreatorName" />
+
+    <TextView
+        android:id="@+id/commentDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/inter"
+        android:text="TextView"
+        android:textColor="@color/additional_text_color"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toBottomOf="@+id/commentCreatorName"
+        app:layout_constraintStart_toEndOf="@+id/commentCreatorName" />
+
+    <TextView
+        android:id="@+id/commentReputationText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-4dp"
+        android:fontFamily="@font/inter"
+        android:textColor="@color/main_text_color"
+        app:layout_constraintEnd_toEndOf="@+id/commentLikeBtn"
+        app:layout_constraintStart_toStartOf="@+id/commentLikeBtn"
+        app:layout_constraintTop_toBottomOf="@+id/commentLikeBtn" />
+</androidx.constraintlayout.widget.ConstraintLayout>

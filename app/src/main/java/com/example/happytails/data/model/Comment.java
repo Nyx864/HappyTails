@@ -1,5 +1,7 @@
 package com.example.happytails.data.model;
 
+import java.time.LocalDateTime;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -10,4 +12,5 @@ public class Comment {
     private Post post;
     private String text;
     private int reputation;
+    private LocalDateTime sendTime;
 }

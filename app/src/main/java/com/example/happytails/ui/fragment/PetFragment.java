@@ -40,7 +40,7 @@ public class PetFragment extends Fragment {
         setupFriendsList(pet);
         setupPostsList(pet);
 
-        binding.back.setOnClickListener(v -> navigateBack());
+        binding.petBackBtn.setOnClickListener(v -> navigateBack());
 
         return binding.getRoot();
     }

@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.view.LayoutInflater;
@@ -83,6 +84,7 @@ public class TipsFragment extends Fragment {
         List<Article> articles = getArticles();
 
         TipAdapter tipAdapter = new TipAdapter(articles);
+        tipAdapter.setOnItemClickListener((view, data) -> navigateToTipFragment());
         binding.tipsRV.setAdapter(tipAdapter);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
@@ -100,5 +102,10 @@ public class TipsFragment extends Fragment {
                 new Article(defaultIcon, "asdasd", "21312312312adasd", null),
                 new Article(defaultIcon, "asdasd", "21312312312adasd", null)
         );
+    }
+
+    private void navigateToTipFragment() {
+        Navigation.findNavController(binding.getRoot())
+                .navigate(R.id.action_tipsFragment_to_tipFragment);
     }
 }

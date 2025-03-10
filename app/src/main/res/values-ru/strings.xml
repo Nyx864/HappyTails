@@ -12,4 +12,9 @@
     <string name="add_friend">Добавить в друзья</string>
     <string name="friends">Друзья</string>
     <string name="see_more">посмотреть всех</string>
+    <string name="setting">Настройки</string>
+    <string name="my_account">Мой профиль</string>
+    <string name="notifications">Уведомления</string>
+    <string name="password">Пароль</string>
+    <string name="content_amp_display">Контент и отображение</string>
 </resources>

@@ -26,13 +26,13 @@
             android:textColor="@color/main_text_color"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/edit"
-            app:layout_constraintStart_toEndOf="@+id/back"
+            app:layout_constraintEnd_toStartOf="@+id/petEditBtn"
+            app:layout_constraintStart_toEndOf="@+id/petBackBtn"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
 
         <ImageButton
-            android:id="@+id/back"
+            android:id="@+id/petBackBtn"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:background="@android:color/transparent"
@@ -43,7 +43,7 @@
             app:layout_constraintTop_toTopOf="@+id/petBarName" />
 
         <ImageButton
-            android:id="@+id/edit"
+            android:id="@+id/petEditBtn"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:background="@android:color/transparent"

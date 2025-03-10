@@ -12,4 +12,9 @@
     <string name="add_friend">Add Friend</string>
     <string name="friends">Friends</string>
     <string name="see_more">See more</string>
+    <string name="setting">Setting</string>
+    <string name="my_account">My account</string>
+    <string name="notifications">Notifications</string>
+    <string name="password">Password</string>
+    <string name="content_amp_display"><![CDATA[Content & Display]]></string>
 </resources>

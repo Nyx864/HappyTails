@@ -28,6 +28,7 @@ import com.example.happytails.data.model.Share;
 import com.example.happytails.data.model.User;
 import com.example.happytails.databinding.FragmentHomeBinding;
 
+import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
 
@@ -44,15 +45,17 @@ public class HomeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
 
-        setupEventsList();
+        setupArticleList();
         setupPostsList();
 
         return binding.getRoot();
     }
 
-    private void setupEventsList() {
+    private void setupArticleList() {
         List<Article> articles = getArticles();
-        binding.eventsRV.setAdapter(new ArticleAdapter(articles));
+        ArticleAdapter adapter = new ArticleAdapter(articles);
+        adapter.setOnItemClickListener((view, data) -> navigateToTipFragment());
+        binding.eventsRV.setAdapter(adapter);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
         binding.eventsRV.setLayoutManager(layoutManager);
@@ -79,7 +82,7 @@ public class HomeFragment extends Fragment {
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         binding.postsRV.setLayoutManager(layoutManager);
 
-        adapter.setOnItemClickListener((view, data) -> {
+        adapter.setOnCreatorsClickListener((view, data) -> {
             Post post = (Post) data;
             if (post.getCreators().size() == 1) {
                 navigateToPetFragment();
@@ -95,6 +98,7 @@ public class HomeFragment extends Fragment {
                 );
             }
         });
+        adapter.setOnCommentClickListener((view, data) -> navigateToPostFragment());
     }
 
     private PopupWindow createCreatorListPopup(View v) {
@@ -150,11 +154,11 @@ public class HomeFragment extends Fragment {
         );
 
         List<Comment> comments = Arrays.asList(
-                new Comment(null, null, null, 0), new Comment(null, null, null, 0),
-                new Comment(null, null, null, 0), new Comment(null, null, null, 0),
-                new Comment(null, null, null, 0), new Comment(null, null, null, 0),
-                new Comment(null, null, null, 0), new Comment(null, null, null, 0),
-                new Comment(null, null, null, 0), new Comment(null, null, null, 0)
+                new Comment(null, null, null, 0, LocalDateTime.now()), new Comment(null, null, null, 0, LocalDateTime.now()),
+                new Comment(null, null, null, 0, LocalDateTime.now()), new Comment(null, null, null, 0, LocalDateTime.now()),
+                new Comment(null, null, null, 0, LocalDateTime.now()), new Comment(null, null, null, 0, LocalDateTime.now()),
+                new Comment(null, null, null, 0, LocalDateTime.now()), new Comment(null, null, null, 0, LocalDateTime.now()),
+                new Comment(null, null, null, 0, LocalDateTime.now()), new Comment(null, null, null, 0, LocalDateTime.now())
         );
 
         List<Share> shares = Arrays.asList(
@@ -165,7 +169,17 @@ public class HomeFragment extends Fragment {
     }
 
     private void navigateToPetFragment() {
-        NavController controller = Navigation.findNavController(binding.getRoot());
-        controller.navigate(R.id.action_homeFragment_to_petFragment2);
+        Navigation.findNavController(binding.getRoot())
+                .navigate(R.id.action_homeFragment_to_petFragment2);
+    }
+
+    private void navigateToPostFragment() {
+        Navigation.findNavController(binding.getRoot())
+                .navigate(R.id.action_homeFragment_to_postFragment);
+    }
+
+    private void navigateToTipFragment() {
+        Navigation.findNavController(binding.getRoot())
+                .navigate(R.id.action_homeFragment_to_tipFragment2);
     }
 }
