@@ -12,12 +12,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.example.happytails.R;
-import com.example.happytails.adapter.TabAdapter;
-import com.example.happytails.adapter.TipAdapter;
-import com.example.happytails.data.model.Article;
+import com.example.happytails.ui.adapter.TabAdapter;
+import com.example.happytails.ui.adapter.TipAdapter;
+import com.example.happytails.data.dto.Article;
 import com.example.happytails.databinding.FragmentTipsBinding;
 
 import java.util.Arrays;

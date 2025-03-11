@@ -17,4 +17,10 @@
     <string name="notifications">Уведомления</string>
     <string name="password">Пароль</string>
     <string name="content_amp_display">Контент и отображение</string>
+    <string name="book_a_vet_appointment">Запишитесь на прием к ветеринару</string>
+    <string name="comments">Прокоментировать</string>
+    <string name="book_now">Записаться</string>
+    <string name="select_clinic">Выбрать Клинику</string>
+    <string name="select_pet">Выбрать Питомца</string>
+    <string name="select_time">Выбрать Время</string>
 </resources>

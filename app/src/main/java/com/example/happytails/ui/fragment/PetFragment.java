@@ -11,9 +11,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.happytails.adapter.PetListAdapter;
-import com.example.happytails.adapter.PostAdapter;
-import com.example.happytails.data.model.Pet;
+import com.example.happytails.ui.adapter.PetListAdapter;
+import com.example.happytails.ui.adapter.PostAdapter;
+import com.example.happytails.data.dto.Pet;
 import com.example.happytails.databinding.FragmentPetBinding;
 
 import java.util.ArrayList;

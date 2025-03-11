@@ -1,5 +1,6 @@
 package com.example.happytails;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -12,7 +13,11 @@ import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.NavigationUI;
 
+import com.example.happytails.data.repository.LoginRepository;
+import com.example.happytails.data.source.DataSourceFactory;
+import com.example.happytails.data.source.LoginDataSource;
 import com.example.happytails.databinding.ActivityMainBinding;
+import com.example.happytails.login.LoginActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,6 +26,16 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        LoginDataSource dataSource = DataSourceFactory.create(LoginDataSource.class, this);
+        LoginRepository repository = LoginRepository.getInstance(dataSource);
+        if (!repository.isLoggedIn()) {
+            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(intent);
+            return;
+        }
+
+
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         EdgeToEdge.enable(this);

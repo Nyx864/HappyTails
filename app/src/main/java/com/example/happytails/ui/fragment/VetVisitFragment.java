@@ -4,17 +4,16 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.happytails.databinding.FragmentTipBinding;
+import com.example.happytails.databinding.FragmentVetVisitBinding;
 
-public class TipFragment extends Fragment {
+public class VetVisitFragment extends Fragment {
 
-    private FragmentTipBinding binding;
+    private FragmentVetVisitBinding binding;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -24,15 +23,7 @@ public class TipFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        binding = FragmentTipBinding.inflate(inflater, container, false);
-
-        binding.tipBackBtn.setOnClickListener(v -> navigateToPrevFragment());
-
+        binding = FragmentVetVisitBinding.inflate(inflater, container,false);
         return binding.getRoot();
-    }
-
-    private void navigateToPrevFragment() {
-        Navigation.findNavController(binding.getRoot())
-                .popBackStack();
     }
 }

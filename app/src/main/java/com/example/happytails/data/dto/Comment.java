@@ -1,4 +1,4 @@
-package com.example.happytails.data.model;
+package com.example.happytails.data.dto;
 
 import java.time.LocalDateTime;
 

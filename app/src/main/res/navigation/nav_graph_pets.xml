@@ -29,5 +29,13 @@
         <action
             android:id="@+id/action_petFragment_to_petsFragment"
             app:destination="@id/petsFragment" />
+        <action
+            android:id="@+id/action_petFragment_to_vetVisitFragment"
+            app:destination="@id/vetVisitFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/vetVisitFragment"
+        android:name="com.example.happytails.ui.fragment.VetVisitFragment"
+        android:label="fragment_vet_visit"
+        tools:layout="@layout/fragment_vet_visit" />
 </navigation>

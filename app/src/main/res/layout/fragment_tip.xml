@@ -8,7 +8,7 @@
     tools:context=".ui.fragment.TipFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout3"
+        android:id="@+id/constraintLayout6"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:paddingBottom="4dp"
@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/profilePageText"
+            android:id="@+id/tipFragmentText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -38,9 +38,9 @@
             android:background="@android:color/transparent"
             android:rotation="180"
             android:src="@drawable/arrow"
-            app:layout_constraintBottom_toBottomOf="@+id/profilePageText"
+            app:layout_constraintBottom_toBottomOf="@+id/tipFragmentText"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/profilePageText" />
+            app:layout_constraintTop_toTopOf="@+id/tipFragmentText" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -51,7 +51,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout6">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/linearLayout"

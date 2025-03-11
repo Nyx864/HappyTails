@@ -1,11 +1,11 @@
-package com.example.happytails.data.model;
+package com.example.happytails.data.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class Share {
+public class Like {
     private Post post;
     private User user;
 }

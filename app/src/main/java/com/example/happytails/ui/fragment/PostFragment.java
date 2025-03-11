@@ -3,6 +3,7 @@ package com.example.happytails.ui.fragment;
 import android.graphics.drawable.Icon;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
@@ -11,13 +12,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.happytails.R;
-import com.example.happytails.adapter.CommentAdapter;
-import com.example.happytails.adapter.PostAdapter;
-import com.example.happytails.data.model.Comment;
-import com.example.happytails.data.model.Like;
-import com.example.happytails.data.model.Post;
-import com.example.happytails.data.model.Share;
-import com.example.happytails.data.model.User;
+import com.example.happytails.ui.adapter.CommentAdapter;
+import com.example.happytails.ui.adapter.PostAdapter;
+import com.example.happytails.data.dto.Comment;
+import com.example.happytails.data.dto.Like;
+import com.example.happytails.data.dto.Post;
+import com.example.happytails.data.dto.Share;
+import com.example.happytails.data.dto.User;
 import com.example.happytails.databinding.FragmentPostBinding;
 
 import java.time.LocalDateTime;
@@ -34,7 +35,7 @@ public class PostFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = FragmentPostBinding.inflate(inflater, container, false);
 

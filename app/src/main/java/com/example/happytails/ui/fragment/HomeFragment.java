@@ -5,7 +5,6 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -16,16 +15,16 @@ import android.view.ViewGroup;
 import android.widget.PopupWindow;
 
 import com.example.happytails.R;
-import com.example.happytails.adapter.ArticleAdapter;
-import com.example.happytails.adapter.CreatorAdapter;
-import com.example.happytails.adapter.PostAdapter;
-import com.example.happytails.listener.OnItemClickListener;
-import com.example.happytails.data.model.Article;
-import com.example.happytails.data.model.Comment;
-import com.example.happytails.data.model.Like;
-import com.example.happytails.data.model.Post;
-import com.example.happytails.data.model.Share;
-import com.example.happytails.data.model.User;
+import com.example.happytails.ui.adapter.ArticleAdapter;
+import com.example.happytails.ui.adapter.CreatorAdapter;
+import com.example.happytails.ui.adapter.PostAdapter;
+import com.example.happytails.utils.listener.OnItemClickListener;
+import com.example.happytails.data.dto.Article;
+import com.example.happytails.data.dto.Comment;
+import com.example.happytails.data.dto.Like;
+import com.example.happytails.data.dto.Post;
+import com.example.happytails.data.dto.Share;
+import com.example.happytails.data.dto.User;
 import com.example.happytails.databinding.FragmentHomeBinding;
 
 import java.time.LocalDateTime;

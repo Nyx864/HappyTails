@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/profilePageText"
+            android:id="@+id/tipFragmentText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -39,9 +39,9 @@
             android:background="@android:color/transparent"
             android:rotation="180"
             android:src="@drawable/arrow"
-            app:layout_constraintBottom_toBottomOf="@+id/profilePageText"
+            app:layout_constraintBottom_toBottomOf="@+id/tipFragmentText"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/profilePageText" />
+            app:layout_constraintTop_toTopOf="@+id/tipFragmentText" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

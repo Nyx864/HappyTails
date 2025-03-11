@@ -1,4 +1,4 @@
-package com.example.happytails.adapter;
+package com.example.happytails.ui.adapter;
 
 import android.content.Context;
 import android.graphics.Typeface;
@@ -13,7 +13,7 @@ import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.happytails.R;
-import com.example.happytails.listener.OnChosenStateUpdateListener;
+import com.example.happytails.utils.listener.OnChosenStateUpdateListener;
 
 import java.util.HashSet;
 import java.util.List;

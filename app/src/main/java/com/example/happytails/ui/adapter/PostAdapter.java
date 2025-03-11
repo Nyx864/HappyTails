@@ -1,4 +1,4 @@
-package com.example.happytails.adapter;
+package com.example.happytails.ui.adapter;
 
 import android.graphics.Typeface;
 import android.text.InputFilter;
@@ -17,9 +17,9 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.happytails.R;
-import com.example.happytails.data.model.User;
-import com.example.happytails.listener.OnItemClickListener;
-import com.example.happytails.data.model.Post;
+import com.example.happytails.data.dto.User;
+import com.example.happytails.utils.listener.OnItemClickListener;
+import com.example.happytails.data.dto.Post;
 
 import java.util.Iterator;
 import java.util.List;

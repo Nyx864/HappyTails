@@ -11,8 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.happytails.R;
-import com.example.happytails.adapter.PetListAdapter;
-import com.example.happytails.data.model.User;
+import com.example.happytails.ui.adapter.PetListAdapter;
+import com.example.happytails.data.dto.User;
 import com.example.happytails.databinding.FragmentProfileBinding;
 import com.google.android.flexbox.FlexWrap;
 import com.google.android.flexbox.FlexboxLayoutManager;

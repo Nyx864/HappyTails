@@ -1,4 +1,4 @@
-package com.example.happytails.adapter;
+package com.example.happytails.ui.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,8 +10,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.happytails.R;
-import com.example.happytails.listener.OnItemClickListener;
-import com.example.happytails.data.model.Article;
+import com.example.happytails.utils.listener.OnItemClickListener;
+import com.example.happytails.data.dto.Article;
 
 import java.util.List;
 
