@@ -51,7 +51,7 @@
         android:layout_height="32dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/rounded"
-        android:backgroundTint="@color/button_bg_color"
+        android:backgroundTint="@color/button_bg_color_enabled"
         android:fontFamily="@font/inter"
         android:paddingHorizontal="10dp"
         android:text="@string/read_article"

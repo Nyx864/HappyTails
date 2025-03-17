@@ -35,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         EdgeToEdge.enable(this);

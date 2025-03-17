@@ -3,7 +3,7 @@ package com.example.happytails.data.source;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import com.example.happytails.data.dto.LoginData;
+import com.example.happytails.data.dto.SingInData;
 import com.example.happytails.utils.Result;
 
 import java.io.IOException;
@@ -29,10 +29,10 @@ public class LoginPreferenceStorage implements BaseDataSource{
         return instance;
     }
 
-    public void saveLoginData(LoginData loginData) {
+    public void saveLoginData(String usernameOrEmail, String password) {
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString(KEY_USER_NAME, loginData.getUsername());
-        editor.putString(KEY_PASSWORD, loginData.getPassword());
+        editor.putString(KEY_USER_NAME, usernameOrEmail);
+        editor.putString(KEY_PASSWORD, password);
         editor.apply();
     }
 
@@ -42,13 +42,13 @@ public class LoginPreferenceStorage implements BaseDataSource{
         editor.apply();
     }
 
-    public Result<LoginData> getSavedLoginData() {
+    public Result<SingInData> getSavedLoginData() {
         String username = sharedPreferences.getString(KEY_USER_NAME, null);
         String password = sharedPreferences.getString(KEY_PASSWORD, null);
         if (username == null || password == null) {
             return new Result.Error(new IOException("No login info set"));
         } else {
-            return new Result.Success<>(new LoginData(username, password));
+            return new Result.Success<>(new SingInData(username, password));
         }
     }
 }

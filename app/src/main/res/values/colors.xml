@@ -13,14 +13,16 @@
     <color name="nav_selected">@color/black</color>
     <color name="nav_stroke">@color/pale_beige</color>
 
-    <!--Основные цвета-->
+    <!--Цвет фона-->
     <color name="main_bg_color">@color/cream</color>
-    <color name="main_text_color">@color/black</color>
-
-    <!--Другие цвета-->
-    <color name="additional_text_color">@color/pale_brown</color>
-    <color name="button_bg_color">@color/orange</color>
+    <color name="button_bg_color_enabled">@color/orange</color>
+    <color name="button_bg_color_disabled">#CBC18B3D</color>
     <color name="search_field_bg_color">#F4EDE7</color>
     <color name="add_friend_btn_bg_color">#F4EDE7</color>
     <color name="creators_list_bg_color">#F4EDE7</color>
+
+    <!--Цвет текста-->
+    <color name="main_text_color">@color/black</color>
+    <color name="additional_text_color">@color/pale_brown</color>
+    <color name="error_text_color">@android:color/holo_red_light</color>
 </resources>

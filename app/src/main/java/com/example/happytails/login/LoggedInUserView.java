@@ -1,9 +1,11 @@
 package com.example.happytails.login;
 
+import java.util.concurrent.Future;
+
 import lombok.Getter;
 
 @Getter
-class LoggedInUserView {
+public class LoggedInUserView {
     private final String displayName;
 
     LoggedInUserView(String displayName) {

@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class LoginData {
-    String username;
+public class SingInData {
+    String usernameOrEmail;
     String password;
 }

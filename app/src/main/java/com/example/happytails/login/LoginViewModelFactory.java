@@ -19,17 +19,25 @@ public class LoginViewModelFactory implements ViewModelProvider.Factory {
     @Override
     @SuppressWarnings("unchecked")
     public <T extends ViewModel> T create(@NonNull Class<T> modelClass, @NonNull CreationExtras creationExtras) {
-        if (modelClass.isAssignableFrom(LoginViewModel.class)) {
-            Application application = (Application) creationExtras.get(ViewModelProvider.AndroidViewModelFactory.APPLICATION_KEY);
-            if (application == null) {
-                throw new IllegalStateException("Application is null in CreationExtras");
-            }
+        if (modelClass.isAssignableFrom(SingInViewModel.class)) {
+            LoginDataSource dataSource = DataSourceFactory.create(LoginDataSource.class, getContext(creationExtras));
+            return (T) new SingInViewModel(LoginRepository.getInstance(dataSource));
 
-            Context context = application.getApplicationContext();
-            LoginDataSource dataSource = DataSourceFactory.create(LoginDataSource.class, context);
-            return (T) new LoginViewModel(LoginRepository.getInstance(dataSource));
+        } if (modelClass.isAssignableFrom(RegisterViewModel.class)) {
+            LoginDataSource dataSource = DataSourceFactory.create(LoginDataSource.class, getContext(creationExtras));
+            return (T) new RegisterViewModel(LoginRepository.getInstance(dataSource));
+
         } else {
             throw new IllegalArgumentException("Unknown ViewModel class");
         }
+    }
+
+    private Context getContext(CreationExtras creationExtras) {
+        Application application = (Application) creationExtras.get(ViewModelProvider.AndroidViewModelFactory.APPLICATION_KEY);
+        if (application == null) {
+            throw new IllegalStateException("Application is null in CreationExtras");
+        }
+
+        return application.getApplicationContext();
     }
 }

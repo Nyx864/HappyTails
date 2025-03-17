@@ -180,7 +180,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/rounded"
-        android:backgroundTint="@color/button_bg_color"
+        android:backgroundTint="@color/button_bg_color_enabled"
         android:text="@string/book_now"
         android:textAllCaps="false"
         android:textColor="@color/main_text_color"

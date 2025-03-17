@@ -1,9 +1,11 @@
 package com.example.happytails.data.repository;
 
-import com.example.happytails.data.dto.LoginData;
+import com.example.happytails.data.dto.RegisterData;
+import com.example.happytails.data.dto.SingInData;
 import com.example.happytails.data.source.LoginDataSource;
-import com.example.happytails.utils.Result;
 import com.example.happytails.data.dto.LoggedInUser;
+
+import java.util.concurrent.CompletableFuture;
 
 public class LoginRepository{
 
@@ -11,7 +13,7 @@ public class LoginRepository{
 
     private final LoginDataSource dataSource;
 
-    private LoggedInUser user = null;
+    private CompletableFuture<LoggedInUser> user = CompletableFuture.completedFuture(null);
 
     private LoginRepository(LoginDataSource dataSource) {
         this.dataSource = dataSource;
@@ -26,32 +28,35 @@ public class LoginRepository{
     }
 
     public boolean isLoggedIn() {
-        return user != null;
+        return user.join() != null;
     }
 
-    public void logout() {
-        user = null;
-        dataSource.logout();
+    public CompletableFuture<LoggedInUser> getLoggedInUser() {
+        return user;
     }
 
-    private void setLoggedInUser(LoggedInUser user) {
-        this.user = user;
+    public void setLoggedInUser(CompletableFuture<LoggedInUser> loggedInUser) {
+        user = loggedInUser;
     }
 
-    public Result<LoggedInUser> login(LoginData loginData) {
-        Result<LoggedInUser> result = dataSource.login(loginData);
-        if (result instanceof Result.Success) {
-            setLoggedInUser(((Result.Success<LoggedInUser>) result).getData());
-        }
-        return result;
+    public CompletableFuture<LoggedInUser> singIn(SingInData singInData) {
+        CompletableFuture<LoggedInUser> res = dataSource.singIn(singInData);
+        setLoggedInUser(res);
+        return res;
+    }
+
+    public CompletableFuture<LoggedInUser> register(RegisterData registerData) {
+        CompletableFuture<LoggedInUser> res = dataSource.register(registerData);
+        setLoggedInUser(res);
+        return res;
     }
 
     public void updateLoggedInUser() {
-        Result<LoggedInUser> result = dataSource.getLoggedInUser();
-        if (result instanceof Result.Success) {
-            user = ((Result.Success<LoggedInUser>) result).getData();
-        } else {
-            user = null;
-        }
+        user = dataSource.getLoggedInUser();
+    }
+
+    public void logout() {
+        setLoggedInUser(CompletableFuture.completedFuture(null));
+        dataSource.logout();
     }
 }
