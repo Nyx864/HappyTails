@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1007935003752",
+    "project_id": "happy-tails-33546",
+    "storage_bucket": "happy-tails-33546.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1007935003752:android:cb53f13a44e21965f4afdd",
+        "android_client_info": {
+          "package_name": "com.example.happytails"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCo1PSfEtvgJFPqJaLJxl4NxpHhvMOC6uQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

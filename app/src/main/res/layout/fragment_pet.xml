@@ -67,12 +67,13 @@
             android:layout_height="wrap_content"
             android:orientation="vertical" >
 
-            <ImageView
+            <androidx.constraintlayout.utils.widget.ImageFilterView
                 android:id="@+id/petImage"
                 android:layout_width="128dp"
                 android:layout_height="128dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="20dp"
+                app:roundPercent="1"
                 tools:src="@tools:sample/avatars" />
 
             <TextView

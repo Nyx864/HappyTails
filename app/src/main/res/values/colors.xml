@@ -20,6 +20,8 @@
     <color name="search_field_bg_color">#F4EDE7</color>
     <color name="add_friend_btn_bg_color">#F4EDE7</color>
     <color name="creators_list_bg_color">#F4EDE7</color>
+    <color name="input_bg_color_enabled">#E4E0DE</color>
+    <color name="input_bg_color_disabled">#A8A5A4</color>
 
     <!--Цвет текста-->
     <color name="main_text_color">@color/black</color>

@@ -1,6 +1,5 @@
 package com.example.happytails.ui.fragment;
 
-import android.app.ProgressDialog;
 import android.graphics.drawable.Icon;
 import android.os.Bundle;
 

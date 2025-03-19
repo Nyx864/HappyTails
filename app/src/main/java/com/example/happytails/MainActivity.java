@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         if (!repository.isLoggedIn()) {
             Intent intent = new Intent(MainActivity.this, LoginActivity.class);
             startActivity(intent);
-            return;
+            finish();
         }
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
